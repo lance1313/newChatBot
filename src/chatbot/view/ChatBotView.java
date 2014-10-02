@@ -16,6 +16,9 @@ public class ChatBotView
 	// private String chat;
 
 	private ChatBotController baseController;
+	
+	
+	
 
 	// this is the chat checker.
 
@@ -35,25 +38,29 @@ public class ChatBotView
 	 * This shows the words that apperes on the screen and returns the result to
 	 * determine weather you want it to exit or continue based on input.
 	 * 
-	 * @param currentInput
-	 * @return
+	 * @param currentInput the supplied string
+	 * @return hte users typed response
 	 */
 	public String showChatBot(String currentInput)
 	{
 		String result = "";
-		if (currentInput != null)
-		{
+		
 			int wordLength = currentInput.length();
-
-			JOptionPane.showMessageDialog(null, "Hello ," + currentInput);
-			JOptionPane.showMessageDialog(null, "Your name is " + wordLength + " letters long.");
-		}
-		result = JOptionPane.showInputDialog(null, "are you done");
+		result = JOptionPane.showInputDialog(null, baseController.getMyAwesomeChatBot() +" says: "+currentInput);
 
 		return result;
-
 	}
+	
+	public void ShowChatBotMessage(String currentOutput)
+	{
+		JOptionPane.showMessageDialog(null, currentOutput);
+	}
+	
+}
+	
 
 	// + ChatBotController.getMyChatBot().getName(
-
+/*if (currentInput != null)
+		{
 }
+*/
