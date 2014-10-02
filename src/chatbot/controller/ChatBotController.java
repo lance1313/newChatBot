@@ -23,8 +23,8 @@ public class ChatBotController
 	{
 		appView = new ChatBotView(this);
 		myAwesomeChatBot = new  ChatBotModel("derf");
-		startMessage = "Welcome" + myAwesomeChatBot.getName() + " chatbot. What is your name?";
-		quitMessage = "good bye cruel world.";
+		startMessage = "Welcome to the " + myAwesomeChatBot.getName() + " chatbot. What is your name?";
+		quitMessage = "good bye cruel world:)";
 	}
 	/**
 	 * this is a constructor.
@@ -41,29 +41,13 @@ public class ChatBotController
 		//this is the quit checker in model
 		while(!myAwesomeChatBot.quitChecker(result))
 		{//this is a new result from the result in view.
+			
+			result = myAwesomeChatBot.processText(result);
 			result = appView.showChatBot(result);
 		}
 			quit();
 		
 	}
-
-	/**
-	 * 
-	 * @param currentString The current string is  what is being inputed to the console
-	 * now.
-	 * @return
-	 */
-	private boolean memeChecker(String currentString)
-	{
-	
-		
-		return false;
-		
-	}
-	
-	
-	
-	
 	
 		//start
 	//say hello

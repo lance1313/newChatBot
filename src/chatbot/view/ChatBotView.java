@@ -28,7 +28,7 @@ public class ChatBotView
 	 * 
 	 * @param baseController
 	 */
-	public ChatBotView(ChatBotController baseController)
+	public ChatBotView(ChatBotController baseController)//this is a constructor for the controller in the view.
 	{
 		this.baseController = baseController;// shove the 2 baseControllers
 												// together.
@@ -46,14 +46,16 @@ public class ChatBotView
 		String result = "";
 		
 			int wordLength = currentInput.length();
-		result = JOptionPane.showInputDialog(null, baseController.getMyAwesomeChatBot() +" says: "+currentInput);
+		result = JOptionPane.showInputDialog(null, baseController.getMyAwesomeChatBot().getName() +" says: "+ currentInput);
 
 		return result;
 	}
 	
-	public void ShowChatBotMessage(String currentOutput)
+	public String ShowChatBotMessage(String currentInput)
 	{
-		JOptionPane.showMessageDialog(null, currentOutput);
+		JOptionPane.showMessageDialog(null, baseController.getMyAwesomeChatBot().getName() + " says "+ currentInput);
+		return currentInput;
+	
 	}
 	
 }
