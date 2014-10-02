@@ -18,7 +18,6 @@ public class ChatBotModel
 	private int chatCount;
 	private ArrayList<String> memeList;
 	// Arrays.asList("hi","bye","yes","no"));
-
 	private ArrayList<String> contentList;
 
 	/**
@@ -81,6 +80,14 @@ public class ChatBotModel
 		memeList.add("sucker");
 	}
 
+	private void fillTheContentList()
+	{
+		contentList.add("");
+		contentList.add("");
+		contentList.add("");
+		contentList.add("");
+	}
+	
 	/**
 	 * 
 	 * @param currentInput
@@ -110,9 +117,15 @@ public class ChatBotModel
 		chatCount++;
 	}
 
-	private void stringChecker()
+	private boolean contentChecker(String input)
 	{
-		// int wordLength = currentInput;
+		boolean content = false;
+		
+		
+		
+		
+		
+		return content;
 
 	}
 
@@ -142,11 +155,7 @@ public class ChatBotModel
 
 	}
 
-	private void contentChecker()
-	{
-
-	}
-
+	
 	/**
 	 * This checks the input from the view to see if you should quit.
 	 * 
