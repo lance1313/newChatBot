@@ -9,7 +9,7 @@ import javax.swing.*;
  * to the View.
  * 
  * @author jlin3312
- *
+ * 
  */
 public class ChatBotModel
 {
@@ -36,6 +36,7 @@ public class ChatBotModel
 											// constructor.
 		contentList = new ArrayList<String>();
 		fillTheMemeList();
+		fillTheContentList();
 
 	}
 
@@ -72,7 +73,7 @@ public class ChatBotModel
 
 	private void fillTheMemeList()
 	{
-		memeList.add("Poke");
+		memeList.add("Pokemon");
 		memeList.add("hello");
 		memeList.add(" my name");
 		memeList.add("cool");
@@ -82,12 +83,15 @@ public class ChatBotModel
 
 	private void fillTheContentList()
 	{
-		contentList.add("");
-		contentList.add("");
-		contentList.add("");
-		contentList.add("");
+		contentList.add("pokemon");
+		contentList.add("pikachu");
+		contentList.add("pichu");
+		contentList.add("raichu");
+		contentList.add("scizor");
+		contentList.add("butterfree");
+		contentList.add("raichu");
 	}
-	
+
 	/**
 	 * 
 	 * @param currentInput
@@ -108,6 +112,11 @@ public class ChatBotModel
 		{
 			result = "Not a meme, try again";
 		}
+		//content
+		if(contentChecker(currentInput))
+		{
+			result = "Really you like "+ currentInput + " well I like"+ contentList.contains(result);
+		}
 
 		return result;
 	}
@@ -120,11 +129,15 @@ public class ChatBotModel
 	private boolean contentChecker(String input)
 	{
 		boolean content = false;
-		
-		
-		
-		
-		
+
+		for (String currentContent : contentList)
+		{
+			if (input.equalsIgnoreCase(currentContent))
+			{
+				content = true;
+			}
+		}
+
 		return content;
 
 	}
@@ -139,6 +152,7 @@ public class ChatBotModel
 			{
 				isAMeme = true;
 			}
+
 		}
 
 		for (int loopCounter = 0; loopCounter < memeList.size(); loopCounter++)// for
@@ -155,7 +169,6 @@ public class ChatBotModel
 
 	}
 
-	
 	/**
 	 * This checks the input from the view to see if you should quit.
 	 * 
