@@ -113,10 +113,7 @@ public class ChatBotModel
 			result = "Not a meme, try again";
 		}
 		//content
-		if(contentChecker(currentInput))
-		{
-			result = "Really you like "+ currentInput + " well I like"+ contentList.contains(result);
-		}
+		
 
 		return result;
 	}
@@ -126,17 +123,10 @@ public class ChatBotModel
 		chatCount++;
 	}
 
-	private boolean contentChecker(String input)
+	private String contentChecker(String input)
 	{
-		boolean content = false;
-
-		for (String currentContent : contentList)
-		{
-			if (input.equalsIgnoreCase(currentContent))
-			{
-				content = true;
-			}
-		}
+		String content = "";
+		
 
 		return content;
 
